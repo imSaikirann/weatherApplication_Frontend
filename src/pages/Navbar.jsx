@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button,  Text } from '@chakra-ui/react';
+import { Box, Button, Text } from '@chakra-ui/react';
 
 export default function Navbar() {
     return (
@@ -10,24 +10,24 @@ export default function Navbar() {
             h="100px"
             alignItems="center"
             justifyContent="space-between"
-            px={["1rem","7rem"]}
+            px={["1rem", "7rem"]}
             bg="primary.200"
-            color='white'
-           
+            color='primary.100'
+
         >
-            <Box p="1rem" bg="primary.100"  border="1px solid grey">
-                <Text fontSize={["18px","24px"]} fontWeight="500"
+            <Box p="1rem"  >
+                <Text fontSize={["18px", "24px"]} fontWeight="500"
 
                 >SkyView</Text>
             </Box>
-          
-            <Box>
-                <Button>
 
-                    <Text fontSize="14px">
+            <Box>
+                <Button bg="primary.100">
+
+                    <Text fontSize="14px" color="primary.200">
                         User</Text>
-                        
-                        </Button>
+
+                </Button>
             </Box>
         </Box>
     );
