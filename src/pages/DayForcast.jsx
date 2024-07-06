@@ -85,7 +85,7 @@ export default function DayForcast() {
         borderRadius="7px"
         w={{ base: "100%", md: "400px" }}
         maxW={{ base: "100%", md: "300px" }}
-        h={{ base: "100%", md: "400px" }}
+        h={{ base: "50%", md: "400px" }}
         overflowY="auto" 
       >
         <Box
