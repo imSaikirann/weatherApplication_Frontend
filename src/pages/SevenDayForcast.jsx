@@ -13,15 +13,27 @@ export default function SevenDayForcast() {
   }, [data]);
 
   return (
-    <Box
-      p={{ base: '1rem', md: '2rem' }}
+  <Box
+  display="flex"
+  flexDirection="column"
+  alignItems="center"
+  justifyContent="center"
+ 
+  
+  >
+      <Box
+      px={{ base: "1rem", md: "7rem" }}
       bg="primary.200"
       borderRadius="7px"
-      boxShadow="0px 4px 6px rgba(0, 0, 0, 0.1)"
-      maxW={{ base: '100%', md: '1200px' }}
-      mx="auto"
+      boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+      border="1px solid #C2C3C5"
+      w={{ base: '100%', md: '1200px' }}
+      mr={["0px","6rem"]}
+      mt="2rem"
+    
+
     >
-      <Text fontSize="2xl" mb="1rem" color="primary.100" fontWeight="bold">
+      <Text fontSize="2xl" mb="1rem"  mt="1rem" color="primary.100" fontWeight="bold">
         7-Day Forecast
       </Text>
       {isLoading ? (
@@ -31,22 +43,33 @@ export default function SevenDayForcast() {
           {forecast.map((day, index) => (
             <Box
               key={index}
-              p="1rem"
+              p={["1rem","1rem"]}
               bg="white"
-              borderRadius="5px"
-              boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+              boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+              border="1px solid #C2C3C5"
+              borderRadius="7px"
               w="100%"
+              display="flex"
+              flexDirection={["column","row"]}
+              alignItems="center"
+              justifyContent="center"
             >
-              <Text fontSize="lg" fontWeight="bold">
+              <Box>
+              <Image src={day.day.condition.icon} alt={day.day.condition.text} boxSize="50px" />
+              </Box>
+             <Box>
+             <Text fontSize="lg" fontWeight="bold">
                 {new Date(day.date).toLocaleDateString('en-US', { weekday: 'long' })}
               </Text>
               <Text>Temperature: {day.day.avgtemp_c}°C</Text>
               <Text>Condition: {day.day.condition.text}</Text>
-              <Image src={day.day.condition.icon} alt={day.day.condition.text} boxSize="50px" />
+             </Box>
+          
             </Box>
           ))}
         </VStack>
       )}
     </Box>
+  </Box>
   );
 }

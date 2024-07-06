@@ -94,6 +94,7 @@ export default function DayForcast() {
           alignItems="center"
           justifyContent="space-between"
           gap="2rem"
+           
           
         >
           <Box textAlign="left"> 
