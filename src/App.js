@@ -5,6 +5,7 @@ import Navbar from './pages/Navbar';
 import { BrowserRouter,Route,Routes} from 'react-router-dom'
 import Search from './pages/Search';
 import DayForcast from './pages/DayForcast';
+import SevenDayForcast from './pages/SevenDayForcast';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         
       </Routes>
       <DayForcast/>
+      <SevenDayForcast/>
       </BrowserRouter>
     
 

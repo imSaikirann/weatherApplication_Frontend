@@ -12,7 +12,7 @@ export default function Search() {
         const fetchWeatherData = async () => {
             if (city.trim() !== '') {
                 try {
-                    const res = await axios.post(`https://api.weatherapi.com/v1/forecast.json?key=bf360855ee084cb7a8d171537240407&q=${city}&days=3&aqi=no&alerts=no`);
+                    const res = await axios.post(`https://api.weatherapi.com/v1/forecast.json?key=bf360855ee084cb7a8d171537240407&q=${city}&days=7&aqi=no&alerts=yes`);
                     setData(res.data);
                     console.log(res.data);
                     setLoading(false);

@@ -73,7 +73,7 @@ export default function DayForcast() {
        
       >
         <Skeleton isLoaded={!isLoading} height="100%" width="100%">
-          <Line data={chartData} options={options} />
+          <Line data={chartData} options={options}  />
         </Skeleton>
       </Box>
       <Box
