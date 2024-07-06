@@ -15,8 +15,8 @@ export default function Navbar() {
             color='primary.100'
 
         >
-            <Box p="1rem"  >
-                <Text fontSize={["18px", "24px"]} fontWeight="500"
+            <Box  >
+                <Text fontSize={["20px", "24px"]} fontWeight="700"
 
                 >SkyView</Text>
             </Box>
