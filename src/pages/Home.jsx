@@ -3,9 +3,7 @@ import { Box, Image, HStack, VStack, Skeleton, SkeletonText, Text } from '@chakr
 import { calendar, map } from '../assets/ImgData';
 import { useData } from '../Context/dataContext';
 import { hum, wind, Pre, vi, Sunrise, Sunset } from '../assets/ImgData';
-import DayForcast from './DayForcast';
-import SevenDayForcast from './SevenDayForcast';
-import Search from './Search'
+
 
 export default function Home() {
     const { data, isLoading } = useData();
@@ -82,8 +80,8 @@ export default function Home() {
 
 
     return (
-        <>
-         <Search></Search>
+  
+       
         <Box
             display="flex"
             flexDirection={["column", "row"]}
@@ -348,8 +346,7 @@ export default function Home() {
 
 
         </Box>
-        <DayForcast/>
-        <SevenDayForcast/>
-        </>
+       
+     
     );
 }

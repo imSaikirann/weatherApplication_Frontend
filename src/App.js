@@ -1,26 +1,24 @@
 import './App.css';
 import Home from './pages/Home';
 import Navbar from './pages/Navbar';
+import DayForcast from './pages/DayForcast'
+import SevenDayForcast from './pages/SevenDayForcast'
 
-import { BrowserRouter,Route,Routes} from 'react-router-dom'
 
-import Signup from './pages/Signup';
+
+import Search from './pages/Search';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Navbar/>
-     
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/signup' element={<Signup/>}></Route>
-        
-        
-      </Routes>
-  
-      </BrowserRouter>
     
+        <Navbar />
+        <Search />
+        <Home/>
+        <DayForcast />
+        <SevenDayForcast />
+
+
 
     </div>
   );
