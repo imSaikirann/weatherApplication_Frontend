@@ -22,9 +22,9 @@ export default function Search() {
 
         const debounceFetch = setTimeout(() => {
             fetchWeatherData();
-        }, 500); 
+        }, 500);
 
-        return () => clearTimeout(debounceFetch); 
+        return () => clearTimeout(debounceFetch);
     }, [city, setData]);
 
     const handleInput = (e) => {
@@ -33,32 +33,33 @@ export default function Search() {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && city.trim() !== '') {
-            
+        
         }
     };
 
     return (
         <Box
             display="flex"
-            flexDirection={["column", "row"]}
-            w="100%"
-            h="80px"
+            flexDirection={{ base: "column", md: "row" }}
+            w="full"
+            h="auto"
             alignItems="center"
             justifyContent="space-between"
-            px={["1rem", "7rem"]}
+            px={{ base: "1rem", md: "7rem" }}
+            py={{ base: "1rem", md: "2rem" }}
         >
-            <Box w="100%" px={["0.7rem", "0px"]} textAlign={["left", "left"]}>
-                <Text fontSize={["18px", "28px"]} color='primary.100'>
+            <Box w="full" textAlign={{ base: "left", md: "left" }} mb={{ base: "1rem", md: "0" }}>
+                <Text fontSize={{ base: "18px", md: "28px" }} color='primary.100'>
                     Good morning !!
                 </Text>
             </Box>
-            <Box>
+            <Box w="full" maxW={{ base: "100%", md: "600px" }}>
                 <Input
                     type='text'
                     placeholder='Search by City Name'
-                    w={["300px", "600px"]}
-                    p='1.3rem'
-                    fontSize={["10px", "14px"]}
+                    w="full"
+                    p={{ base: '1rem', md: '1.3rem' }}
+                    fontSize={{ base: "14px", md: "16px" }}
                     _hover={{
                         border: "1px solid grey",
                     }}
