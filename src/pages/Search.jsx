@@ -4,7 +4,8 @@ import { useData } from '../Context/dataContext';
 import axios from 'axios';
 
 export default function Search() {
-    const { setData } = useData();
+    const { setData ,setLoading} = useData();
+
     const [city, setCity] = useState('Hyderabad');
 
     useEffect(() => {
@@ -14,6 +15,7 @@ export default function Search() {
                     const res = await axios.post(`https://api.weatherapi.com/v1/forecast.json?key=bf360855ee084cb7a8d171537240407&q=${city}&days=3&aqi=no&alerts=no`);
                     setData(res.data);
                     console.log(res.data);
+                    setLoading(false)
                 } catch (error) {
                     console.error("Error fetching weather data:", error);
                 }
@@ -25,7 +27,7 @@ export default function Search() {
         }, 500);
 
         return () => clearTimeout(debounceFetch);
-    }, [city, setData]);
+    }, [city, setData,setLoading]);
 
     const handleInput = (e) => {
         setCity(e.target.value);
