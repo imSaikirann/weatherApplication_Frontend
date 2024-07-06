@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Image, HStack, VStack, Skeleton, SkeletonText, Text } from '@chakra-ui/react';
+import { Box, Image, HStack, VStack, Skeleton, SkeletonText, Text} from '@chakra-ui/react';
 import { calendar, map } from '../assets/ImgData';
 import { useData } from '../Context/dataContext';
-import { hum } from '../assets/ImgData';
+import { hum, wind, Pre, vi, Sunrise } from '../assets/ImgData';
 
 export default function Home() {
     const { data, isLoading } = useData();
@@ -68,6 +68,9 @@ export default function Home() {
     const date = dateMatch ? dateMatch[0] : placeholderDate;
     const icon = data?.current?.condition?.icon || placeholderIcon;
     const humidity = data?.current?.humidity;
+    const pressure = data?.current?.pressure_in;
+    const wind_speed = data?.current?.wind_kph;
+    const visibilty_distance = data?.current?.vis_km;
 
     return (
         <Box
@@ -84,7 +87,7 @@ export default function Home() {
             <Box
                 mt="1rem"
                 color="primary.100"
-                p={{ base: "1rem", md: "1.8rem" }}
+                p={{ base: "2rem", md: "1.8rem" }}
                 boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                 border="1px solid #C2C3C5"
                 borderRadius="7px"
@@ -96,6 +99,7 @@ export default function Home() {
                         <Image src={icon} alt="Weather Icon" boxSize={{ base: "50px", md: "75px" }} />
                         <Text fontSize={{ base: "36px", md: "56px" }} fontWeight="600">{formattedTemperature}</Text>
                     </HStack>
+                    <Box w="100%" h='1px' bg="primary.100" border="2px solid primary.100" ></Box>
                     <Box w="240px" boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)" />
                     <VStack align="center" spacing="0.5rem">
                         <HStack spacing="2rem">
@@ -132,16 +136,27 @@ export default function Home() {
                         border="1px solid #C2C3C5"
                         borderRadius="7px"
                         mb="1rem"
+                        w={{ base: "auto", md: "250px" }}
                     >
-                       <HStack>
-                        <Box>
-                            <Image src={hum}></Image>
+                        <Box
+                            display="flex"
+                            flexDirection="row"
+                            alignItems={["center", "flex-start"]}
+                            justifyContent={["center", "flex-start"]}
+                            p={{ base: "0.8rem", md: "0rem" }}
+                            w={{ base: "auto", md: "250px" }}
+                            gap="1rem"
+                        >
+                            <Box>
+                                <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={wind}></Image>
+                            </Box>
+                            <Box >
+                                <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Wind </Text>
+                                <Text fontWeight="700">{wind_speed} km/h</Text>
+                            </Box>
                         </Box>
-                       <Box>
-                       <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Humidity</Text>
-                       <Text fontWeight="700">{humidity}%</Text>
-                       </Box>
-                       </HStack>
+
+
 
                     </Box>
                     <Box
@@ -152,62 +167,174 @@ export default function Home() {
                         borderRadius="7px"
                         mb="1rem"
                     >
-                        <HStack>
-                        <Box>
-                            <Image src={hum}></Image>
+
+                        <Box
+                            display="flex"
+                            flexDirection="row"
+                            alignItems={["center", "flex-start"]}
+                            justifyContent={["center", "flex-start"]}
+                            p={{ base: "0.8rem", md: "0rem" }}
+                            w={{ base: "auto", md: "200px" }}
+                            gap="1rem"
+                        >
+
+                            <Box>
+                                <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={hum}></Image>
+                            </Box>
+                            <Box>
+                                <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Humidity</Text>
+                                <Text fontWeight="700">{humidity}%</Text>
+                            </Box>
                         </Box>
-                       <Box>
-                       <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Humidity</Text>
-                       <Text fontWeight="700">{humidity}%</Text>
-                       </Box>
-                       </HStack>
+
 
                     </Box>
 
                 </Box>
-                <Box flex="1" display="flex" flexDirection="column">
+                <Box flex="1" display="flex" flexDirection="column" >
 
                     <Box
                         color="primary.100"
-                        p={{ base: "0.2rem", md: "1rem" }}
+                        p={{ base: "0.1rem", md: "1rem" }}
                         boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                         border="1px solid #C2C3C5"
                         borderRadius="7px"
                         mb="1rem"
+                        w={{ base: "auto", md: "250px" }}
+
                     >
-                       <HStack>
-                        <Box>
-                            <Image src={hum}></Image>
+                        <Box
+                            display="flex"
+                            flexDirection="row"
+                            alignItems={["center", "flex-start"]}
+                            justifyContent={["center", "flex-start"]}
+                            p={{ base: "0.8rem", md: "0rem" }}
+                            w={{ base: "auto", md: "200px" }}
+                            gap="1rem"
+                        >
+                            <Box>
+                                <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Pre}></Image>
+                            </Box>
+                            <Box>
+                                <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Pressure</Text>
+                                <Text fontWeight="700">{pressure} Hpa</Text>
+                            </Box>
+
                         </Box>
-                       <Box>
-                       <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Humidity</Text>
-                       <Text fontWeight="700">{humidity}%</Text>
-                       </Box>
-                       </HStack>
+
+
 
                     </Box>
                     <Box
                         color="primary.100"
-                        p={{ base: "0.2rem", md: "1rem" }}
+                        p={{ base: "0.1rem", md: "1rem" }}
                         boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                         border="1px solid #C2C3C5"
                         borderRadius="7px"
                         mb="1rem"
+
                     >
-                     <HStack>
-                        <Box>
-                            <Image src={hum}></Image>
+                        <Box
+                            display="flex"
+                            flexDirection="row"
+                            alignItems={["center", "flex-start"]}
+                            justifyContent={["center", "flex-start"]}
+                            p={{ base: "0.8rem", md: "0rem" }}
+                            w={{ base: "auto", md: "200px" }}
+                            gap="1rem"
+                        >
+                            <Box>
+                                <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={vi}></Image>
+                            </Box>
+                            <Box>
+                                <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Visibility</Text>
+                                <Text fontWeight="700">{visibilty_distance} Km</Text>
+                            </Box>
                         </Box>
-                       <Box>
-                       <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Humidity</Text>
-                       <Text fontWeight="700">{humidity}%</Text>
-                       </Box>
-                       </HStack>
 
                     </Box>
 
                 </Box>
+
             </Box>
+            <Box
+                mt="1rem"
+                color="primary.100"
+                display="flex"
+                flexDirection={{base:"column",md:"row"}}
+                p={{ base: "2rem", md: "1.8rem" }}
+                boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+                border="1px solid #C2C3C5"
+                borderRadius="7px"
+                w={{ base: "100%", md: "auto" }}
+                maxW={{ base: "100%", md: "400px" }}
+            >
+                <Box
+                    color="primary.100"
+                    p={{ base: "0.2rem", md: "1rem" }}
+                    boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+                    border="1px solid #C2C3C5"
+                    borderRadius="7px"
+                    mb="1rem"
+                    w={{ base: "auto", md: "100px" }}
+                >
+                    <Box
+                        display="flex"
+                        flexDirection="row"
+                        alignItems={["center", "flex-start"]}
+                        justifyContent={["center", "flex-start"]}
+                        p={{ base: "0.8rem", md: "0rem" }}
+                        w={{ base: "auto", md: "100px" }}
+                        gap="1rem"
+                    >
+                        <Box>
+                            <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunrise}></Image>
+                        </Box>
+                        <Box >
+                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Wind </Text>
+                            <Text fontWeight="700">{wind_speed} km/h</Text>
+                        </Box>
+                    </Box>
+
+
+
+                </Box>
+                <Box
+                    color="primary.100"
+                    p={{ base: "0.2rem", md: "1rem" }}
+                    boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+                    border="1px solid #C2C3C5"
+                    borderRadius="7px"
+                    mb="1rem"
+                    w={{ base: "auto", md: "250px" }}
+                >
+                    <Box
+                        display="flex"
+                        flexDirection="row"
+                        alignItems={["center", "flex-start"]}
+                        justifyContent={["center", "flex-start"]}
+                        p={{ base: "0.8rem", md: "0rem" }}
+                        w={{ base: "auto", md: "250px" }}
+                        gap="1rem"
+                    >
+                        <Box>
+                            <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunrise}></Image>
+                        </Box>
+                        <Box >
+                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Wind </Text>
+                            <Text fontWeight="700">{wind_speed} km/h</Text>
+                        </Box>
+                    </Box>
+
+
+
+                </Box>
+
+
+
+            </Box>
+
+
         </Box>
     );
 }
