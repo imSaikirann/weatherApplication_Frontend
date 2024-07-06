@@ -74,7 +74,7 @@ export default function Home() {
     const visibilty_distance = data?.current?.vis_km;
     const sunrise_time = data?.forecast?.forecastday?.[0]?.astro?.sunrise;
     const sunset_time = data?.forecast?.forecastday?.[0]?.astro?.sunset;
-   
+
 
 
 
@@ -83,7 +83,7 @@ export default function Home() {
             display="flex"
             flexDirection={["column", "row"]}
             alignItems={{ base: "center", md: "flex-start" }}
-            justifyContent="flex-start"
+            justifyContent={["center","flex-start"]}
             px={{ base: "1rem", md: "7rem" }}
             gap="1rem"
             color="white"
@@ -274,7 +274,9 @@ export default function Home() {
                 borderRadius="7px"
                 w={{ base: "100%", md: "auto" }}
                 maxW={{ base: "100%", md: "400px" }}
-                gap= {["1rem","0rem"]}
+                gap={["1rem", "0rem"]}
+                alignItems="center"
+                justifyContent="center"
             >
                 <Box
                     color="primary.100"
@@ -287,7 +289,7 @@ export default function Home() {
                 >
                     <Box
                         display="flex"
-                        flexDirection={["column","row"]}
+                        flexDirection={["column", "row"]}
                         alignItems={["center", "flex-start"]}
                         justifyContent={["center", "flex-start"]}
                         p={{ base: "0.8rem", md: "0rem" }}
@@ -314,16 +316,16 @@ export default function Home() {
                     borderRadius="7px"
                     mb="1rem"
                     w={{ base: "auto", md: "250px" }}
-                   
+
                 >
                     <Box
                         display="flex"
-                        flexDirection={["column","row"]}
+                        flexDirection={["column", "row"]}
                         alignItems={["center", "flex-start"]}
                         justifyContent={["center", "flex-start"]}
                         p={{ base: "0.8rem", md: "0rem" }}
                         w={{ base: "auto", md: "250px" }}
-                        gap= {["1rem","1rem"]}
+                        gap={["1rem", "1rem"]}
                     >
                         <Box>
                             <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunset}></Image>
