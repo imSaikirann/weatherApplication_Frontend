@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Image, HStack, VStack, Skeleton, SkeletonText, Text} from '@chakra-ui/react';
+import { Box, Image, HStack, VStack, Skeleton, SkeletonText, Text } from '@chakra-ui/react';
 import { calendar, map } from '../assets/ImgData';
 import { useData } from '../Context/dataContext';
-import { hum, wind, Pre, vi, Sunrise } from '../assets/ImgData';
+import { hum, wind, Pre, vi, Sunrise, Sunset } from '../assets/ImgData';
 
 export default function Home() {
     const { data, isLoading } = useData();
@@ -11,6 +11,7 @@ export default function Home() {
     const placeholderDate = 'N/A';
     const placeholderLocation = 'Unknown Location';
     const placeholderTemp = 'N/A';
+
 
     if (isLoading) {
         return (
@@ -71,6 +72,11 @@ export default function Home() {
     const pressure = data?.current?.pressure_in;
     const wind_speed = data?.current?.wind_kph;
     const visibilty_distance = data?.current?.vis_km;
+    const sunrise_time = data?.forecast?.forecastday?.[0]?.astro?.sunrise;
+    const sunset_time = data?.forecast?.forecastday?.[0]?.astro?.sunset;
+   
+
+
 
     return (
         <Box
@@ -95,9 +101,9 @@ export default function Home() {
                 maxW={{ base: "100%", md: "700px" }}
             >
                 <VStack align="flex-start" spacing="1rem">
-                    <HStack align="flex-start" spacing="1rem">
+                    <HStack align="flex-start" spacing="0.5rem">
                         <Image src={icon} alt="Weather Icon" boxSize={{ base: "50px", md: "75px" }} />
-                        <Text fontSize={{ base: "36px", md: "56px" }} fontWeight="600">{formattedTemperature}</Text>
+                        <Text fontSize={{ base: "36px", md: "50px" }} fontWeight="600">{formattedTemperature}</Text>
                     </HStack>
                     <Box w="100%" h='1px' bg="primary.100" border="2px solid primary.100" ></Box>
                     <Box w="240px" boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)" />
@@ -261,47 +267,18 @@ export default function Home() {
                 mt="1rem"
                 color="primary.100"
                 display="flex"
-                flexDirection={{base:"column",md:"row"}}
+                flexDirection={{ base: "row", md: "column" }}
                 p={{ base: "2rem", md: "1.8rem" }}
                 boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                 border="1px solid #C2C3C5"
                 borderRadius="7px"
                 w={{ base: "100%", md: "auto" }}
                 maxW={{ base: "100%", md: "400px" }}
+                gap= {["1rem","0rem"]}
             >
                 <Box
                     color="primary.100"
-                    p={{ base: "0.2rem", md: "1rem" }}
-                    boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-                    border="1px solid #C2C3C5"
-                    borderRadius="7px"
-                    mb="1rem"
-                    w={{ base: "auto", md: "100px" }}
-                >
-                    <Box
-                        display="flex"
-                        flexDirection="row"
-                        alignItems={["center", "flex-start"]}
-                        justifyContent={["center", "flex-start"]}
-                        p={{ base: "0.8rem", md: "0rem" }}
-                        w={{ base: "auto", md: "100px" }}
-                        gap="1rem"
-                    >
-                        <Box>
-                            <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunrise}></Image>
-                        </Box>
-                        <Box >
-                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Wind </Text>
-                            <Text fontWeight="700">{wind_speed} km/h</Text>
-                        </Box>
-                    </Box>
-
-
-
-                </Box>
-                <Box
-                    color="primary.100"
-                    p={{ base: "0.2rem", md: "1rem" }}
+                    p={{ base: "0.6rem", md: "1rem" }}
                     boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                     border="1px solid #C2C3C5"
                     borderRadius="7px"
@@ -310,7 +287,7 @@ export default function Home() {
                 >
                     <Box
                         display="flex"
-                        flexDirection="row"
+                        flexDirection={["column","row"]}
                         alignItems={["center", "flex-start"]}
                         justifyContent={["center", "flex-start"]}
                         p={{ base: "0.8rem", md: "0rem" }}
@@ -321,17 +298,45 @@ export default function Home() {
                             <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunrise}></Image>
                         </Box>
                         <Box >
-                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Wind </Text>
-                            <Text fontWeight="700">{wind_speed} km/h</Text>
+                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Sunrise</Text>
+                            <Text fontWeight="700">{sunrise_time}</Text>
                         </Box>
                     </Box>
 
 
 
                 </Box>
+                <Box
+                    color="primary.100"
+                    p={{ base: "0.6rem", md: "1rem" }}
+                    boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
+                    border="1px solid #C2C3C5"
+                    borderRadius="7px"
+                    mb="1rem"
+                    w={{ base: "auto", md: "250px" }}
+                   
+                >
+                    <Box
+                        display="flex"
+                        flexDirection={["column","row"]}
+                        alignItems={["center", "flex-start"]}
+                        justifyContent={["center", "flex-start"]}
+                        p={{ base: "0.8rem", md: "0rem" }}
+                        w={{ base: "auto", md: "250px" }}
+                        gap= {["1rem","1rem"]}
+                    >
+                        <Box>
+                            <Image w={{ base: "30px", md: "30px" }} h={{ base: "30px", md: "30px" }} src={Sunset}></Image>
+                        </Box>
+                        <Box >
+                            <Text fontWeight="400" fontSize={{ base: "14px", md: "14px" }}>Sunrise</Text>
+                            <Text fontWeight="700">{sunset_time} </Text>
+                        </Box>
+                    </Box>
 
 
 
+                </Box>
             </Box>
 
 
