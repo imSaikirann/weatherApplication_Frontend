@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Weather Application is a web-based tool that allows users to check the current weather conditions for various locations. It provides weather details such as temperature, humidity, wind speed, and a brief description of the weather. This application is built using React for the frontend and Node.js with Express for the backend, integrating with the Weather API to fetch real-time weather data.
+The Weather Application is a web-based tool that allows users to check the current weather conditions for various locations. It provides weather details such as temperature, humidity, wind speed, and a brief description of the weather. This application is built using React for the frontend, integrating with the Weather API to fetch real-time weather data.
 
 ## Features
 
@@ -10,12 +10,11 @@ The Weather Application is a web-based tool that allows users to check the curre
 - **Weather Details**: Displays temperature, humidity, wind speed, and weather description.
 - **Responsive Design**: The application is responsive and works well on both desktop and mobile devices.
 - **Favorite City**: Users can save their favorite city for quick access to its weather conditions.
-- **7 Days forcast**: Displays seven days forcast of weather.
+- **7 Days Forecast**: Displays a seven-day forecast of the weather.
 
 ## Technologies Used
 
-- **Frontend**: React, Axios, Chakra UI
-- **Backend**: Node.js, Express
+- **Frontend**: React, Axios, Chakra UI, Chart.js
 - **API**: WeatherAPI
 
 ## How to Download and Set Up the Repository
@@ -34,16 +33,12 @@ To download and set up the Weather Application repository, follow these steps:
     cd weatherApplication_Frontend
     ```
 
-
-
 3. **Install Frontend Dependencies**:
     Open a new terminal window, navigate to the frontend directory, and install the necessary dependencies:
     ```bash
     cd frontend
     npm install
     ```
-
-
 
 4. **Run the Frontend Server**:
     In the `frontend` directory, start the frontend server:
@@ -54,4 +49,6 @@ To download and set up the Weather Application repository, follow these steps:
 5. **Access the Application**:
     Open your web browser and go to `http://localhost:3000` to access the Weather Application.
 
+## UI/UX Design
 
+![Weather Application UI/UX](uiux.png)
