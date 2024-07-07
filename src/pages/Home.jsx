@@ -31,8 +31,8 @@ export default function Home() {
                     mt="1rem"
                     color="primary.100"
                     p={{ base: "1rem", md: "1.8rem" }}
-                    boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-                    border="1px solid #C2C3C5"
+                    boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
+
                     borderRadius="7px"
                     w={{ base: "100%", md: "auto" }}
                     maxW={{ base: "100%", md: "400px" }}
@@ -80,13 +80,13 @@ export default function Home() {
 
 
     return (
-  
-       
+
+
         <Box
             display="flex"
             flexDirection={["column", "row"]}
             alignItems={{ base: "center", md: "flex-start" }}
-            justifyContent={["center","flex-start"]}
+            justifyContent={["center", "flex-start"]}
             px={{ base: "1rem", md: "7rem" }}
             gap="1rem"
             color="white"
@@ -96,10 +96,10 @@ export default function Home() {
             <Box
                 mt="1rem"
                 color="primary.100"
-                p={{ base: "2rem", md: "1.8rem" }}
-                boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-                border="1px solid #C2C3C5"
+                p={{ base: "2rem", md: "2rem" }}
+                boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
                 borderRadius="7px"
+
                 w={{ base: "100%", md: "400px" }}
                 maxW={{ base: "100%", md: "700px" }}
             >
@@ -110,16 +110,17 @@ export default function Home() {
                     </HStack>
                     <Box w="100%" h='1px' bg="primary.100" border="2px solid primary.100" ></Box>
                     <Box w="240px" boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)" />
-                    <VStack align="center" spacing="0.5rem">
-                        <HStack spacing="2rem">
-                            <Image src={calendar} boxSize={{ base: "20px", md: "25px" }} />
-                            <Text fontSize={{ base: "14px", md: "16px" }}>{date}</Text>
+                    <VStack align="center" spacing="1rem">
+                        <HStack spacing="2rem" alignItems="center" justifyContent="space-between" w="100%">
+                            <Image src={calendar} boxSize={{ base: "20px", md: "30px" }} />
+                            <Text fontSize={{ base: "16px", md: "18px" }}>{date}</Text>
                         </HStack>
-                        <HStack spacing="2rem">
-                            <Image src={map} boxSize={{ base: "20px", md: "25px" }} />
-                            <Text fontSize={{ base: "14px", md: "16px" }}>{location}</Text>
+                        <HStack spacing="2rem" alignItems="center" justifyContent="space-between" w="100%">
+                            <Image src={map} boxSize={{ base: "20px", md: "30px" }} />
+                            <Text fontSize={{ base: "16px", md: "18px" }}>{location}</Text>
                         </HStack>
                     </VStack>
+
                 </VStack>
             </Box>
 
@@ -129,8 +130,7 @@ export default function Home() {
                 flexDirection={{ base: 'column', md: 'row' }}
                 color="primary.100"
                 p={{ base: "1rem", md: "1.8rem" }}
-                boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-                border="1px solid #C2C3C5"
+                boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
                 borderRadius="7px"
                 w={{ base: "100%", md: "auto" }}
                 maxW={{ base: "100%", md: "700px" }}
@@ -272,8 +272,8 @@ export default function Home() {
                 display="flex"
                 flexDirection={{ base: "row", md: "column" }}
                 p={{ base: "2rem", md: "1.8rem" }}
-                boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-                border="1px solid #C2C3C5"
+                boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
+
                 borderRadius="7px"
                 w={{ base: "100%", md: "auto" }}
                 maxW={{ base: "100%", md: "400px" }}
@@ -346,7 +346,7 @@ export default function Home() {
 
 
         </Box>
-       
-     
+
+
     );
 }

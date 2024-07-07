@@ -65,8 +65,8 @@ export default function DayForcast() {
         mt="1rem"
         color="primary.100"
         p={{ base: "2rem", md: "1.8rem" }}
-        boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-        border="1px solid #C2C3C5"
+        boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
+       
         borderRadius="7px"
         w={{ base: "350px", md: "900px" }}
         h={{ base: "200px", md: "400px" }}
@@ -79,9 +79,8 @@ export default function DayForcast() {
       <Box
         mt="1rem"
         color="primary.100"
-        p={{ base: "2rem", md: "1.8rem" }}
-        boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-        border="1px solid #C2C3C5"
+        p={{ base: "2rem", md: "2.2rem" }}
+        boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
         borderRadius="7px"
         w={{ base: "100%", md: "400px" }}
         maxW={{ base: "100%", md: "400px" }}

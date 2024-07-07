@@ -25,8 +25,7 @@ export default function SevenDayForcast() {
       px={{ base: "1rem", md: "7rem" }}
       bg="primary.200"
       borderRadius="7px"
-      boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
-      border="1px solid #C2C3C5"
+     boxShadow=" 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11)"
       w={{ base: '100%', md: '100%' }}
     
       mt="2rem"

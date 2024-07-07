@@ -85,7 +85,17 @@ export default function Navbar() {
                         w="100%"
                         >
                             <Text fontSize={["14px",'18px']} fontWeight="500">Add your favorite City 🏙️</Text>
-                            <Input placeholder="Enter your favorite city" type="text" onChange={(e) => handleFav(e.target.value)} value={favCity}></Input>
+                            <Input
+                            
+                            sx={{
+                                '&:focus': {
+                                  border: '0',
+                                  outline: 'none',
+                                  boxShadow:" 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
+                                },
+                              }}
+                            boxShadow=" 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12)"
+                            placeholder="Enter your favorite city" type="text" onChange={(e) => handleFav(e.target.value)} value={favCity}></Input>
                             <Button w="100%" bg="primary.100" color="white" onClick={handleAdd}>Add To Favorite</Button>
                         </Box>
                         <Box mt={8}
