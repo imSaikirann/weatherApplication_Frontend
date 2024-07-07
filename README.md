@@ -51,4 +51,4 @@ To download and set up the Weather Application repository, follow these steps:
 
 ## UI/UX Design
 
-![Weather Application UI/UX](uiux.png)
+![Weather Application UI/UX](public/uiux.png)
