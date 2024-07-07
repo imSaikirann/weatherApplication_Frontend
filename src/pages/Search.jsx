@@ -4,9 +4,9 @@ import { useData } from '../Context/dataContext';
 import axios from 'axios';
 
 export default function Search() {
-    const { setData, setLoading } = useData();
+    const { setData, setLoading ,city,setCity} = useData();
     const [greetings, setGreetings] = useState('morning');
-    const [city, setCity] = useState('Hyderabad');
+  
 
     useEffect(() => {
         const fetchWeatherData = async () => {
