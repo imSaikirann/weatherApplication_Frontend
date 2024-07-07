@@ -17,6 +17,11 @@ The Weather Application is a web-based tool that allows users to check the curre
 - **Frontend**: React, Axios, Chakra UI, Chart.js
 - **API**: WeatherAPI
 
+## Deployed website
+
+- https://main--sskeyview.netlify.app/
+
+
 ## How to Download and Set Up the Repository
 
 To download and set up the Weather Application repository, follow these steps:
@@ -52,3 +57,5 @@ To download and set up the Weather Application repository, follow these steps:
 ## UI/UX Design
 
 ![Weather Application UI/UX](public/uiux.png)
+
+![Weather Application output](public/output.png)
