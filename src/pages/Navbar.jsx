@@ -14,12 +14,18 @@ export default function Navbar() {
 
     const handleSend = (value) => {
         setCity(value);
-        onClose();  // Close the drawer
-    }
+        onClose();
+    };
+
+    const handleRemove = (value) => {
+        const updatedFavs = favData.filter(city => city !== value);
+        localStorage.setItem('favcity', JSON.stringify(updatedFavs));
+        setFavData(updatedFavs);
+    };
 
     const handleFav = (value) => {
         setFavCity(value);
-    }
+    };
 
     const handleAdd = () => {
         if (favCity) {
@@ -27,9 +33,9 @@ export default function Navbar() {
             const updatedFavs = [...currentFavs, favCity];
             localStorage.setItem('favcity', JSON.stringify(updatedFavs));
             setFavData(updatedFavs);
-            setFavCity(''); 
+            setFavCity('');
         }
-    }
+    };
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('favcity')) || [];
@@ -50,7 +56,7 @@ export default function Navbar() {
             color='primary.100'
         >
             <Box>
-                <Text fontSize={{ base: "20px", md: "24px" }} fontWeight="700">
+                <Text fontSize={{ base: "20px", md: "28px" }} fontWeight="700">
                     SkyView
                 </Text>
             </Box>
@@ -70,17 +76,36 @@ export default function Navbar() {
                     <DrawerCloseButton />
                     <DrawerHeader>Menu</DrawerHeader>
                     <DrawerBody bg="transparent">
-                        <Box>
-                            <Text>Add favorite City</Text>
+                        <Box 
+                        display="flex"
+                        flexDirection="column"
+                        gap="1rem"
+                        alignItems="center"
+                        justifyContent="center"
+                        w="100%"
+                        >
+                            <Text fontSize={["14px",'18px']} fontWeight="500">Add your favorite City 🏙️</Text>
                             <Input type="text" onChange={(e) => handleFav(e.target.value)} value={favCity}></Input>
-                            <Button onClick={handleAdd}>Add To Favorite</Button>
+                            <Button w="100%" variant='outline' border="1px solid black" onClick={handleAdd}>Add To Favorite</Button>
                         </Box>
-                        <Box mt={4}>
-                            <Text>Favorite Cities:</Text>
+                        <Box mt={8}
+                         display="flex"
+                         flexDirection="column"
+                         gap="1rem"
+                         alignItems="center"
+                         justifyContent="center"
+                         w="100%"
+                        >
+                        <Text fontSize={["14px",'18px']} fontWeight="500">Favorite Cities</Text>
                             {favData.map((city, index) => (
-                                <Button key={index} bg="white" onClick={() => handleSend(city)}>
-                                    <Text>{city}</Text>
-                                </Button>
+                                <Box key={index} display="flex" alignItems="center" mt={2}>
+                                    <Button bg="primary.100" colorScheme='blackAlpha' color="white" onClick={() => handleSend(city)}>
+                                        <Text fontSize={["14px",'18px']}>{city}</Text>
+                                    </Button>
+                                    <Button ml={2} onClick={() => handleRemove(city)}>
+                                        X
+                                    </Button>
+                                </Box>
                             ))}
                         </Box>
                     </DrawerBody>

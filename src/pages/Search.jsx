@@ -34,13 +34,13 @@ export default function Search() {
         const hours = date.getHours();
         
         if (hours < 12) {
-            setGreetings('morning');
+            setGreetings('morning 🌄');
         } else if (hours < 18) {
-            setGreetings('afternoon');
+            setGreetings('afternoon 🌞');
         } else if(hours < 21) {
-            setGreetings('evening');
+            setGreetings('evening 🌇');
         } else {
-            setGreetings('night');
+            setGreetings('night 🌃');
         }
         
     }, []); 
