@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { useData } from '../Context/dataContext';
 
-// Register the necessary Chart.js components
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function DayForcast() {
@@ -84,7 +84,7 @@ export default function DayForcast() {
         border="1px solid #C2C3C5"
         borderRadius="7px"
         w={{ base: "100%", md: "400px" }}
-        maxW={{ base: "100%", md: "300px" }}
+        maxW={{ base: "100%", md: "400px" }}
         h={{ base: "700px", md: "400px" }}
         overflowY="auto" 
       >

@@ -85,8 +85,8 @@ export default function Navbar() {
                         w="100%"
                         >
                             <Text fontSize={["14px",'18px']} fontWeight="500">Add your favorite City 🏙️</Text>
-                            <Input type="text" onChange={(e) => handleFav(e.target.value)} value={favCity}></Input>
-                            <Button w="100%" variant='outline' border="1px solid black" onClick={handleAdd}>Add To Favorite</Button>
+                            <Input placeholder="Enter your favorite city" type="text" onChange={(e) => handleFav(e.target.value)} value={favCity}></Input>
+                            <Button w="100%" bg="primary.100" color="white" onClick={handleAdd}>Add To Favorite</Button>
                         </Box>
                         <Box mt={8}
                          display="flex"
@@ -99,7 +99,7 @@ export default function Navbar() {
                         <Text fontSize={["14px",'18px']} fontWeight="500">Favorite Cities</Text>
                             {favData.map((city, index) => (
                                 <Box key={index} display="flex" alignItems="center" mt={2}>
-                                    <Button bg="primary.100" colorScheme='blackAlpha' color="white" onClick={() => handleSend(city)}>
+                                    <Button  variant='outline' border="1px solid black"  color="primary.100" onClick={() => handleSend(city)}>
                                         <Text fontSize={["14px",'18px']}>{city}</Text>
                                     </Button>
                                     <Button ml={2} onClick={() => handleRemove(city)}>

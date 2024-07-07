@@ -100,7 +100,7 @@ export default function Home() {
                 boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
                 border="1px solid #C2C3C5"
                 borderRadius="7px"
-                w={{ base: "100%", md: "auto" }}
+                w={{ base: "100%", md: "400px" }}
                 maxW={{ base: "100%", md: "700px" }}
             >
                 <VStack align="flex-start" spacing="1rem">
@@ -288,7 +288,7 @@ export default function Home() {
                     border="1px solid #C2C3C5"
                     borderRadius="7px"
                     mb="1rem"
-                    w={{ base: "auto", md: "250px" }}
+                    w={{ base: "auto", md: "100%" }}
                 >
                     <Box
                         display="flex"
@@ -318,7 +318,7 @@ export default function Home() {
                     border="1px solid #C2C3C5"
                     borderRadius="7px"
                     mb="1rem"
-                    w={{ base: "auto", md: "250px" }}
+                    w={{ base: "auto", md: "100%" }}
 
                 >
                     <Box

@@ -18,8 +18,8 @@ export default function SevenDayForcast() {
   flexDirection="column"
   alignItems="center"
   justifyContent="center"
- 
-  
+  px={{ base: "1rem", md: "7rem" }}
+    w="100%"
   >
       <Box
       px={{ base: "1rem", md: "7rem" }}
@@ -27,8 +27,8 @@ export default function SevenDayForcast() {
       borderRadius="7px"
       boxShadow="0px 10px 0px -100px rgba(0,0,0,0.1)"
       border="1px solid #C2C3C5"
-      w={{ base: '100%', md: '1200px' }}
-      mr={["0px","6rem"]}
+      w={{ base: '100%', md: '100%' }}
+    
       mt="2rem"
     
 
